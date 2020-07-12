@@ -10,7 +10,7 @@ export default class List {
 
   get Template() {
     let template = /*html*/ `
-    <div class="col-3">
+    <div class="col-12 col-md-3">
         <div class="card shadow border-rounded bg-color p-2">
         <button onclick="app.listController.removeList('${this.id}')" type="button" class="close text-right mx-2">
   <span class="" aria-hidden="true">&times;</span>

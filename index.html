@@ -6,15 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css" />
   <title>TaskMaster</title>
 </head>
 
-<body class="bg-light">
+<body class="bg-img font">
   <header class="container-fluid">
-    <div class="row bg-secondary text-center text-light p-2">
+    <div class="row  text-center text-dark p-2">
       <div class="col-12">
-        <h1>TaskMaster</h1>
+        <h1><u><strong>TaskMaster</strong></u></h1>
       </div>
     </div>
 
@@ -25,8 +26,12 @@
         <form onsubmit="app.listController.addList(event)">
           <div class="form-group">
             <label for="addList"></label>
-            <input type="text" name="addList" class="form-control" placeholder="Enter New List....">
-            <span><button type="submit" class="btn btn-secondary btn-block">Add</button></span>
+            <div class="input-group mb-3">
+              <input type="text" name="addList" class="form-control" placeholder="Enter New List...">
+              <div class="input-group-append">
+                <button class="btn btn-dark" type="submit"><b>+</b></button>
+              </div>
+            </div>
           </div>
         </form>
       </div>
@@ -39,7 +44,7 @@
   </main>
 
   <footer class="container-fluid">
-    <div class="row bg-secondary text-center text-light fixed-bottom p-2">
+    <div class="row text-center text-light fixed-bottom p-2">
       <div class="col-12">
         <p>Created By: Kayden Cooper</p>
       </div>
@@ -51,6 +56,7 @@
 
 
   <script src="app/main.js" type="module"></script>
+
 </body>
 
 </html>

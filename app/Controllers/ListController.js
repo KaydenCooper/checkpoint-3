@@ -41,11 +41,9 @@ export default class ListController {
 
   }
 
-  removeTodo(todoId) {
-
-    _listService.removeTodo(todoId)
+  removeTodo(listId) {
+    _listService.removeTodo(listId)
     _drawLists();
-
 
   }
   //TODO: Your app will need the ability to create, and delete both lists and listItems

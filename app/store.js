@@ -2,7 +2,8 @@ import List from "./Models/List.js";
 
 let _state = {
   /** @type {List[]} */
-  lists: []
+  lists: [],
+  todo: [],
 };
 
 //NOTE You should not need to change the code from this point down
@@ -18,13 +19,19 @@ function _loadState() {
 _loadState();
 
 class Store {
-  removeTodo(todoId) {
-    let removeTodoIndex = _state.todo.findIndex(t => t.id == todoId)
-    _state.todo.splice(removeTodoIndex, 1)
+  removeTodo(listId) {
+
+    let removeTodoIndex = _state.lists.findIndex(l => l.id == listId)
+    if (confirm("Are You Sure?!!")) {
+      _state.lists[removeTodoIndex].todo.splice(removeTodoIndex, 1)
+    }
   }
   removeList(listId) {
+
     let removeIndex = _state.lists.findIndex(l => l.id == listId)
-    _state.lists.splice(removeIndex, 1)
+    if (confirm("Are You Sure?!!")) {
+      _state.lists.splice(removeIndex, 1)
+    }
   }
   addTodo(listIndex, todoData) {
     _state.lists[listIndex].todo.push(todoData)

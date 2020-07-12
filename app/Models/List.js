@@ -11,21 +11,27 @@ export default class List {
   get Template() {
     let template = /*html*/ `
     <div class="col-3">
-        <div class="card p-2">
+        <div class="card shadow border-rounded bg-color p-2">
         <button onclick="app.listController.removeList('${this.id}')" type="button" class="close text-right mx-2">
   <span class="" aria-hidden="true">&times;</span>
 </button>
-        
-          <form class="p-2" onsubmit="app.listController.addTodo(event, '${this.id}')">
+        <h2 class=" text-center"><u>${this.name}</u></h2>
+          <form class="" onsubmit="app.listController.addTodo(event, '${this.id}')">
             <div class="form-group">
               <label for="todos"></label>
-              <input type="text" name="todos" class="form-control" placeholder="Enter Todo...">
-              <button type="submit" class="btn btn-secondary btn-block">Add</button>
-              <h2 class="p-2 text-center">${this.name}</h2>
+              <div class="input-group mb-3">
+  <input type="text" name="todos" class="form-control" placeholder="Enter Todo...">
+  <div class="input-group-append">
+    <button class="btn btn-dark" type="submit"><b>+</b></button>
+  </div>
+</div>
+              
+              
             </div>
-          </form>`
-    this.todo.forEach(l => template += `<h4><button onclick="app.listController.removeTodo('${this.id}')" type="button" class="btn btn-danger mx-4 px-2 py-0">
-X</button>${l}</h4>`)
+          </form>
+          `
+    this.todo.forEach(todo => template += `<h4><button onclick="app.listController.removeTodo('${this.id}')" type="button" class="btn btn-outline-danger mx-2 px-1 py-0">
+X</button>${todo}</h4>`)
     template += `</div> </div>`
 
 

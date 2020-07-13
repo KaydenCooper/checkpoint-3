@@ -41,8 +41,8 @@ export default class ListController {
 
   }
 
-  removeTodo(listId) {
-    _listService.removeTodo(listId)
+  removeTodo(listId, todoIndex) {
+    _listService.removeTodo(listId, todoIndex)
     _drawLists();
 
   }

@@ -19,11 +19,11 @@ function _loadState() {
 _loadState();
 
 class Store {
-  removeTodo(listId) {
+  removeTodo(listId, todoIndex) {
 
     let removeTodoIndex = _state.lists.findIndex(l => l.id == listId)
     if (confirm("Are You Sure?!!")) {
-      _state.lists[removeTodoIndex].todo.splice(removeTodoIndex, 1)
+      _state.lists[removeTodoIndex].todo.splice(todoIndex, 1)
     }
   }
   removeList(listId) {

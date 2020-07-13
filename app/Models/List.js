@@ -30,7 +30,7 @@ export default class List {
             </div>
           </form>
           `
-    this.todo.forEach(todo => template += `<h4><button onclick="app.listController.removeTodo('${this.id}')" type="button" class="btn btn-outline-danger mx-2 px-1 py-0">
+    this.todo.forEach((todo, todoIndex) => template += `<h4><button onclick="app.listController.removeTodo('${this.id}','${todoIndex}')" type="button" class="btn btn-outline-danger mx-2 px-1 py-0">
 X</button>${todo}</h4>`)
     template += `</div> </div>`
 

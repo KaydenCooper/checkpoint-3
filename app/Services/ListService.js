@@ -5,8 +5,8 @@ class ListService {
   constructor() {
     console.log("service");
   }
-  removeTodo(listId) {
-    _store.removeTodo(listId)
+  removeTodo(listId, todoIndex) {
+    _store.removeTodo(listId, todoIndex)
     _store.saveState()
   }
   removeList(listId) {
